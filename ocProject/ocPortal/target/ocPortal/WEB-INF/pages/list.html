@@ -6,7 +6,7 @@
 	    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
 		<meta name="keywords" content="">
 		<meta name="description" content="">
-		<title>趣科普文化科技发展有限公司</title>
+		<title>趣科普</title>
 		<#include "./common/res.html">
 	</head>
 
@@ -49,7 +49,7 @@
 						
 			<div class="types-block clearfix" style="padding:0px;">
 				<h3 style="margin-bottom: 20px;">	
-					<span class="types-title" style="margin-right:40px;">课程列表</span>
+					<span class="types-title" style="margin-right:40px;">服务列表</span>
 					<a href="javascript:void(0)" style="display: inline-block;margin-right:20px;" onclick="_queryPage(1,undefined,'last')">
 					<span <#if sort?? && sort=='last'>class="color-oc"</#if> >最新</span>
 					</a>
@@ -91,10 +91,10 @@
 									<#else>
 									高级
 									</#if>
-									<span>·</span>${item.studyCount!}人在学
+									<span>·</span>${item.studyCount!}人参与
 									</div>
 									<#else>
-									<div class="course-card-info">${item.studyCount!}人在学</div>
+									<div class="course-card-info">${item.studyCount!}人参与</div>
 									<div class="course-card-price">￥${item.price!}</div>
 									</#if>
 								</div>

@@ -18,7 +18,7 @@
 			</div>
 			
 			<div class="setting-right"  >
-				<div><span class="f-16">最近学习</span></div>
+				<div><span class="f-16">最近参与</span></div>
 				<div class="split-line" style="margin: 20px 0px;"></div>
 				
 				<form id="queryPageForm" action="">
@@ -28,7 +28,7 @@
 					<div class="comment-main" style="width: 100%">
 						<a href="${s.base}/course/learn/${item.courseId!}.html" target="_blank" class="user-name link-a" style="font-size:20px;">${item.courseName!}</a>
 						<div class="comment-content">
-							<span class="learn-rate">已学${item.rate!0}%</span>
+							<span class="learn-rate">已完成${item.rate!0}%</span>
 							<span>
 							<a href="${s.base}/course/video/${item.sectionId!}.html" target="_blank" >
 							${item.sectionName!}
@@ -42,7 +42,7 @@
 							</#if>
 							</span>
 							<a href="${s.base}/course/video/${item.sectionId!}.html" target="_blank" >
-							<span class="continue-btn" style="margin-left: 50px;">继续学习</span>
+							<span class="continue-btn" style="margin-left: 50px;">继续</span>
 							</a>
 						</div>
 					</div>

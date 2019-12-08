@@ -6,7 +6,7 @@
 	    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
 		<meta name="keywords" content="">
 		<meta name="description" content="">
-		<title>趣科普文化科技发展有限公司</title>
+		<title>趣科普</title>
 		<#include "./common/res.html">
 	</head>
 
@@ -22,12 +22,12 @@
 							<a href="${s.base}/course/video/12.html" class="learn-btn" >继续学习</a>
 							
 							<div class="static-item"  >
-								<div class="meta">上次学到</div>
+								<div class="meta">上次看到</div>
 								<div class="meta-value" title="${(curCourseSection.name)!}">${(curCourseSection.name)!}</div>
 							</div>
 							
 							<div class="static-item"  >
-								<div class="meta">学习人数</div>
+								<div class="meta">参与人数</div>
 								<div class="meta-value">${(course.studyCount)!}</div>
 							</div>
 							<div class="static-item">
@@ -45,7 +45,7 @@
 								</div>
 							</div>
 							<div class="static-item" style="border:none;">
-								<div class="meta">课程时长</div>
+								<div class="meta">时长</div>
 								<div class="meta-value">${(course.time)!}</div>
 							</div>
 							<a id="collectionSpan" onclick="doCollect(${(course.id)!})" href="javascript:void(0)" class="following" style="float: right;margin-top:5px;" >
@@ -128,7 +128,7 @@
 				</div>
 				</#if>
 				
-				<h4 class="mt-50">推荐课程</h4>
+				<h4 class="mt-50">特别推荐</h4>
 				<#if recomdCourseList?? && recomdCourseList?size gt 0 >
 				<#list recomdCourseList as item>
 				<a href="${s.base}/course/learn/${item.id}.html" target="_black" class="mb-5" title="${item.name!}"><li class="ellipsis oc-color-hover">${item.name!}</li></a>
