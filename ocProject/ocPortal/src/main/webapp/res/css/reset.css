@@ -240,11 +240,11 @@ a:focus{outline:none;}
 }
 .main-category-menu {
     width: 240px;
-	height:450px;
+	height:460px;
 	position: relative;
 	z-index: 2;
 	top: 0px;
-	background:rgba(131,131,131,0.3);
+	background:rgba(178,34,34,0.9);
 	top: -114px;
 }
 .main-category-menu .category {
