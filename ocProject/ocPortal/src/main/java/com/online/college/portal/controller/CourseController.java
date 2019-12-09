@@ -182,4 +182,16 @@ public class CourseController {
 		ModelAndView mv = new ModelAndView("brand_detail");
 		return mv;
 	}
+
+
+	/**
+	 * 下单页面
+	 *
+	 * @return
+	 */
+	@RequestMapping("/buy")
+	public ModelAndView buy() {
+		ModelAndView mv = new ModelAndView("buy");
+		return mv;
+	}
 }
