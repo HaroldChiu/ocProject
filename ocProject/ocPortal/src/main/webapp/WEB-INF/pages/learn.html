@@ -9,23 +9,40 @@
 		<title>趣科普</title>
 		<#include "./common/res.html">
 	</head>
-
+    <style>
+        .course-title .buy{
+            margin-left: 40px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #0089D2;
+            color: #fff;
+			display: inline;
+        }
+        .course-title .name{
+            font-size: 20px;
+            color: #000000;
+            font-weight: bold;
+        }
+    </style>
 	<body>
 		<#include "./common/header.html">
 		<div class="f-main clearfix">
 			<div class="main-course-left">
 					<!-- 基础信息 - start -->
 					<div class="course-info">
-						<div class="course-title">${(course.name)!}</div>
-						
+						<div class="course-title">
+							<span class="name">${(course.name)!}</span>
+							<a class="buy" href="${s.base}/course/buy.html">立即购买</a>
+						</div>
+
 						<div class="course-meta">
 							<a href="${s.base}/course/video/12.html" class="learn-btn" >继续学习</a>
-							
+
 							<div class="static-item"  >
 								<div class="meta">上次看到</div>
 								<div class="meta-value" title="${(curCourseSection.name)!}">${(curCourseSection.name)!}</div>
 							</div>
-							
+
 							<div class="static-item"  >
 								<div class="meta">参与人数</div>
 								<div class="meta-value">${(course.studyCount)!}</div>
@@ -51,11 +68,11 @@
 							<a id="collectionSpan" onclick="doCollect(${(course.id)!})" href="javascript:void(0)" class="following" style="float: right;margin-top:5px;" >
 							</a>
 						</div>
-						
+
 						<div class="course-brief">
 								${(course.brief)!}
 						</div>
-						
+
 						<div class="course-menu">
 							<a  href="javascript:void(0)" >
 							<span onclick="showTab(this,'courseSection')" class="menu-item cur">章节</span>
@@ -68,8 +85,8 @@
 							</a>
 						</div>
 				</div>
-				<!-- 基础信息 - end -->	
-				
+				<!-- 基础信息 - end -->
+
 				<!-- 章节信息 - start -->
 				<div id="courseSection">
 					<#if chaptSections??>
@@ -78,13 +95,13 @@
 						<a href="javascript:void(0);" class="js-open">
 							<h3>
 								<strong><div class="icon-chapter">=</div>${item.name!}</strong>
-								<span class="drop-down">▼</span> 
+								<span class="drop-down">▼</span>
 							</h3>
 						</a>
 						<ul class="chapter-sub">
 							<#if item.sections??>
 							<#list item.sections as section>
-							<a href="${s.base}/course/video/${section.id!}.html" > 
+							<a href="${s.base}/course/video/${section.id!}.html" >
 								<li class="chapter-sub-li">
 									<i class="icon-video">▶</i>${section.name!} (${section.time!})
 								</li>
@@ -95,16 +112,16 @@
 					</div>
 					</#list>
 					</#if>
-					
+
 				</div>
 				<!-- 章节信息 - end -->
-				
+
 				<!-- 评论区 start -->
 				<div id="commentQA">
 				</div>
 				<!-- 评论区 end -->
 			</div>
-						
+
 			<div class="main-course-right"  >
 				<#if courseTeacher??>
 				<div class="lecturer-item" style="width: 100%;">
@@ -127,7 +144,7 @@
 					</a>
 				</div>
 				</#if>
-				
+
 				<h4 class="mt-50">特别推荐</h4>
 				<#if recomdCourseList?? && recomdCourseList?size gt 0 >
 				<#list recomdCourseList as item>
@@ -135,21 +152,21 @@
 				</#list>
 				</#if>
 			</div>
-			
+
 		</div>
-		
+
 		<#include "./common/footer.html">
-		
+
 		<script type="text/javascript">
-		
+
 			$(function(){
-				//实现 章节鼠标焦点 动态效果 
+				//实现 章节鼠标焦点 动态效果
 				$('.chapter li').hover(function(){
 					$(this).find('.icon-video').css('color','#FFF');
 				},function(){
 					$(this).find('.icon-video').css('color','#777');
 				});
-				
+
 				$('.js-open').click(function(){
 					var display = $(this).parent().find('ul').css('display');
 					if(display == 'none'){
@@ -160,7 +177,7 @@
 						$(this).find('.drop-down').html('▲');
 					}
 				});
-				
+
 				if(SHIRO_LOGIN){
 					//判断是否已经收藏
 					var courseId = ${(course.id)!}
@@ -168,16 +185,16 @@
 						var url = '${s.base}/collections/isCollection.html';
 						doCollect(courseId,url);
 					}
-					//判断是否已经关注教师 
+					//判断是否已经关注教师
 					var followId = ${(courseTeacher.id!)};
 					if(followId){
 						var url = '${s.base}/follow/isFollow.html';
 						doFollow(followId,url);
 					}
 				}
-				
-			});	
-			
+
+			});
+
 			/**
 			*展示tab commentQA
 			**/
@@ -186,7 +203,7 @@
 					$(item).removeClass('cur');
 				});
 				$(el).addClass('cur');
-				
+
 				if(divId == 'courseSection'){
 					$('#courseSection').show();
 					$('#commentQA').hide();
@@ -196,14 +213,14 @@
 					_queryPage(1,type);//默认加载 第 1 页
 				}
 			}
-			
+
 			/**
-			*加载 课程评论 & 问答 
+			*加载 课程评论 & 问答
 			* courseId：课程id
 			* sectionId: 章节id
-			* type : 类型 0-评论；1-答疑 
+			* type : 类型 0-评论；1-答疑
 			*/
-			var _type = 0; //全局变量 
+			var _type = 0; //全局变量
 			function _queryPage(pageNum,type){
 				if(type == undefined)
 					type = _type;
@@ -220,29 +237,29 @@
 							function(){}
 						);
 			};
-			
-			//收藏 
+
+			//收藏
 			function doCollect(courseId,url){
 				if(url == undefined){
 					url = '${s.base}/collections/doCollection.html';
 				}
-				//处理收藏 
+				//处理收藏
 				$.ajax({
 					url:url,
 				    type:'POST',
 				    dataType:'json',
 				    data:{"courseId":courseId},
 				    success:function(resp){
-				    	if(resp.errcode == 1){//已收藏 
+				    	if(resp.errcode == 1){//已收藏
 				    		$('#collectionSpan').attr('class','followed');
-				    	}else if(resp.errcode == 0){//未收藏  
+				    	}else if(resp.errcode == 0){//未收藏
 				    		$('#collectionSpan').attr('class','following');
 				    	}
-				    } 
+				    }
 				});
 			}
-			
-			//关注 
+
+			//关注
 			function doFollow(followId,url){
 				if(url == undefined){
 					url = '${s.base}/follow/doFollow.html';
@@ -258,11 +275,11 @@
 				    	}else if(resp.errcode == 0){
 				    		$('#followSpan').html('+关注');
 				    	}
-				    } 
+				    }
 				});
 			}
 		</script>
-		
+
 	</body>
-	
+
 </html>

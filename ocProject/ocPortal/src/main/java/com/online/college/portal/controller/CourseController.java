@@ -160,5 +160,38 @@ public class CourseController {
 		}
 		return jv.toString();
 	}
-	
+
+	/**
+	 * 品牌宣传页面
+	 *
+	 * @return
+	 */
+	@RequestMapping("/brand")
+	public ModelAndView brand() {
+		ModelAndView mv = new ModelAndView("brand");
+		return mv;
+	}
+
+	/**
+	 * 品牌宣传详情页面
+	 *
+	 * @return
+	 */
+	@RequestMapping("/brand_detail")
+	public ModelAndView brand_detail() {
+		ModelAndView mv = new ModelAndView("brand_detail");
+		return mv;
+	}
+
+
+	/**
+	 * 下单页面
+	 *
+	 * @return
+	 */
+	@RequestMapping("/buy")
+	public ModelAndView buy() {
+		ModelAndView mv = new ModelAndView("buy");
+		return mv;
+	}
 }
