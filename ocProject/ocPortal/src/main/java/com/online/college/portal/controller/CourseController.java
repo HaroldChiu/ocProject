@@ -3,6 +3,8 @@ package com.online.college.portal.controller;
 import java.util.Date;
 import java.util.List;
 
+import com.online.college.core.brand.domain.Brand;
+import com.online.college.core.brand.service.IBrandService;
 import net.sf.json.JSONObject;
 
 import org.apache.commons.lang.StringUtils;
@@ -49,6 +51,9 @@ public class CourseController {
 	
 	@Autowired
 	private IUserCourseSectionService userCourseSectionService;
+
+	@Autowired
+	private IBrandService brandService;
 	
 	
 	/**
@@ -166,32 +171,44 @@ public class CourseController {
 	 *
 	 * @return
 	 */
-	@RequestMapping("/brand")
-	public ModelAndView brand() {
-		ModelAndView mv = new ModelAndView("brand");
-		return mv;
-	}
-
-	/**
-	 * 品牌宣传详情页面
-	 *
-	 * @return
-	 */
-	@RequestMapping("/brand_detail")
-	public ModelAndView brand_detail() {
-		ModelAndView mv = new ModelAndView("brand_detail");
-		return mv;
-	}
-
-
-	/**
-	 * 下单页面
-	 *
-	 * @return
-	 */
-	@RequestMapping("/buy")
-	public ModelAndView buy() {
-		ModelAndView mv = new ModelAndView("buy");
-		return mv;
-	}
-}
+//	@RequestMapping("/brand")
+//	public ModelAndView brand(@PathVariable Long brandid) {
+//		ModelAndView mv = new ModelAndView("brand");
+//
+//		//获取品牌名称
+//		Brand brand = brandService.getByBrandId(brandid);
+//		if(null == brand)
+//			return new ModelAndView("error/404");
+//
+//		//获取品牌图片
+//		if(null != brand && StringUtils.isNotEmpty(brand.getBrandPicture())){
+//			brand.setBrandPicture(QiniuStorage.getUrl(brand.getBrandPicture()));
+//		}
+//		mv.addObject("brand", brand);
+//
+//		return mv;
+//	}
+//
+//	/**
+//	 * 品牌宣传详情页面
+//	 *
+//	 * @return
+//	 */
+//	@RequestMapping("/brand_detail")
+//	public ModelAndView brand_detail() {
+//		ModelAndView mv = new ModelAndView("brand_detail");
+//		return mv;
+//	}
+//
+//
+//	/**
+//	 * 下单页面
+//	 *
+//	 * @return
+//	 */
+//	@RequestMapping("/buy")
+//	public ModelAndView buy() {
+//		ModelAndView mv = new ModelAndView("buy");
+//		return mv;
+//	}
+//}
