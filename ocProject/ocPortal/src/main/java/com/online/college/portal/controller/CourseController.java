@@ -182,19 +182,19 @@ public class CourseController {
 	 * @return
 	 */
 	@RequestMapping("/brand")
-	public ModelAndView brand(@PathVariable Long brandid) {
+	public ModelAndView brand() {
 		ModelAndView mv = new ModelAndView("brand");
 
-		//获取品牌名称
-		Brand brand = brandService.getByBrandId(brandid);
-		if(null == brand)
-			return new ModelAndView("error/404");
-
-		//获取品牌图片
-		if(null != brand && StringUtils.isNotEmpty(brand.getBrandPicture())){
-			brand.setBrandPicture(QiniuStorage.getUrl(brand.getBrandPicture()));
-		}
-		mv.addObject("brand", brand);
+//		//获取品牌名称
+//		Brand brand = brandService.getByBrandId(brandid);
+//		if(null == brand)
+//			return new ModelAndView("error/404");
+//
+//		//获取品牌图片
+//		if(null != brand && StringUtils.isNotEmpty(brand.getBrandPicture())){
+//			brand.setBrandPicture(QiniuStorage.getUrl(brand.getBrandPicture()));
+//		}
+//		mv.addObject("brand", brand);
 
 		return mv;
 	}
@@ -204,23 +204,23 @@ public class CourseController {
 	 *
 	 * @return
 	 */
-	@RequestMapping("/brand_detail")
-	public ModelAndView brand_detail(@PathVariable Long brandid) {
+	@RequestMapping("/brand_detail/")
+	public ModelAndView brand_detail() {
 		ModelAndView mv = new ModelAndView("brand_detail");
-
-		//获取品牌详情
-		BrandDetail abrand = branddetailService.getByBrandId(brandid);
-		if(null == abrand)
-			return new ModelAndView("error/404");
-
-		//获取品牌详情图片
-		if(null != abrand && StringUtils.isNotEmpty(abrand.getBrandPic1())){
-			abrand.setBrandPic1(QiniuStorage.getUrl(abrand.getBrandPic1()));
-		}
-		if(null != abrand && StringUtils.isNotEmpty(abrand.getBrandPic2())){
-			abrand.setBrandPic2(QiniuStorage.getUrl(abrand.getBrandPic2()));
-		}
-		mv.addObject("branddetail", abrand);
+//
+//		//获取品牌详情
+//		BrandDetail abrand = branddetailService.getByBrandId(brandId);
+//		if(null == abrand)
+//			return new ModelAndView("error/404");
+//
+//		//获取品牌详情图片
+//		if(null != abrand && StringUtils.isNotEmpty(abrand.getBrandPic1())){
+//			abrand.setBrandPic1(QiniuStorage.getUrl(abrand.getBrandPic1()));
+//		}
+//		if(null != abrand && StringUtils.isNotEmpty(abrand.getBrandPic2())){
+//			abrand.setBrandPic2(QiniuStorage.getUrl(abrand.getBrandPic2()));
+//		}
+//		mv.addObject("branddetail", abrand);
 
 		return mv;
 	}
@@ -231,16 +231,16 @@ public class CourseController {
 	 *
 	 * @return
 	 */
-	@RequestMapping("/buy")
-	public ModelAndView buy(@PathVariable Long orderid) {
+	@RequestMapping("/buy/")
+	public ModelAndView buy() {
 		ModelAndView mv = new ModelAndView("buy");
 
-		//获取订单
-		Order order = orderService.getByOrderId(orderid);
-		if(null == order)
-			return new ModelAndView("error/404");
-
-		mv.addObject("order",order);
+//		//获取订单
+//		Order order = orderService.getByOrderId(orderId);
+//		if(null == order)
+//			return new ModelAndView("error/404");
+//
+//		mv.addObject("order",order);
 		return mv;
 	}
 }
