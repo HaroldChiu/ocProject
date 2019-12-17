@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://10.20.91.130/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.online.college.core.auth.dao.BrandDetailDao">
+
+    <resultMap id="BeanResultMap" type="com.online.college.core.auth.domain.BrandDetail" >
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="brandid" property="brandId"  jdbcType="INTEGER" />
+        <result column="brandheadline" property="brandHeadline"  jdbcType="VARCHAR" />
+        <result column="brandintro" property="brandIntro"  jdbcType="VARCHAR" />
+        <result column="brandpic1" property="brandPic1"  jdbcType="VARCHAR" />
+        <result column="brandpic2" property="brandPic2"  jdbcType="VARCHAR" />
+        <result column="create_time" property="createTime"  jdbcType="DATE" />
+        <result column="create_user" property="createUser"  jdbcType="VARCHAR" />
+        <result column="update_time" property="updateTime"  jdbcType="TIMESTAMP" />
+        <result column="update_user" property="updateUser"  jdbcType="VARCHAR" />
+        <result column="del" property="del"  jdbcType="TINYINT" />
+    </resultMap>
+
+    <sql id="All_Columns">
+        brandid,brandheadline,brandintro,brandpic1,brandpic2,create_time,create_user,
+        update_time,update_user,del,id
+    </sql>
+
+    <select id="getByBrandId" parameterType="java.lang.String"  resultMap="BeanResultMap" >
+        SELECT
+        <include refid="All_Columns"  />
+        FROM t_brand
+        WHERE brandId = #{brandId, jdbcType=INTEGER}
+        AND DEL = 0
+    </select>
+
+</mapper>

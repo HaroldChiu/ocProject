@@ -5,6 +5,10 @@ import java.util.List;
 
 import com.online.college.core.brand.domain.Brand;
 import com.online.college.core.brand.service.IBrandService;
+import com.online.college.core.branddetail.domain.BrandDetail;
+import com.online.college.core.branddetail.service.IBrandDetailService;
+import com.online.college.core.order.domain.Order;
+import com.online.college.core.order.service.IOrderService;
 import net.sf.json.JSONObject;
 
 import org.apache.commons.lang.StringUtils;
@@ -54,6 +58,12 @@ public class CourseController {
 
 	@Autowired
 	private IBrandService brandService;
+
+    @Autowired
+    private IOrderService orderService;
+
+    @Autowired
+    private IBrandDetailService branddetailService;
 	
 	
 	/**
@@ -171,44 +181,66 @@ public class CourseController {
 	 *
 	 * @return
 	 */
-//	@RequestMapping("/brand")
-//	public ModelAndView brand(@PathVariable Long brandid) {
-//		ModelAndView mv = new ModelAndView("brand");
-//
-//		//获取品牌名称
-//		Brand brand = brandService.getByBrandId(brandid);
-//		if(null == brand)
-//			return new ModelAndView("error/404");
-//
-//		//获取品牌图片
-//		if(null != brand && StringUtils.isNotEmpty(brand.getBrandPicture())){
-//			brand.setBrandPicture(QiniuStorage.getUrl(brand.getBrandPicture()));
-//		}
-//		mv.addObject("brand", brand);
-//
-//		return mv;
-//	}
-//
-//	/**
-//	 * 品牌宣传详情页面
-//	 *
-//	 * @return
-//	 */
-//	@RequestMapping("/brand_detail")
-//	public ModelAndView brand_detail() {
-//		ModelAndView mv = new ModelAndView("brand_detail");
-//		return mv;
-//	}
-//
-//
-//	/**
-//	 * 下单页面
-//	 *
-//	 * @return
-//	 */
-//	@RequestMapping("/buy")
-//	public ModelAndView buy() {
-//		ModelAndView mv = new ModelAndView("buy");
-//		return mv;
-//	}
-//}
+	@RequestMapping("/brand")
+	public ModelAndView brand(@PathVariable Long brandid) {
+		ModelAndView mv = new ModelAndView("brand");
+
+		//获取品牌名称
+		Brand brand = brandService.getByBrandId(brandid);
+		if(null == brand)
+			return new ModelAndView("error/404");
+
+		//获取品牌图片
+		if(null != brand && StringUtils.isNotEmpty(brand.getBrandPicture())){
+			brand.setBrandPicture(QiniuStorage.getUrl(brand.getBrandPicture()));
+		}
+		mv.addObject("brand", brand);
+
+		return mv;
+	}
+
+	/**
+	 * 品牌宣传详情页面
+	 *
+	 * @return
+	 */
+	@RequestMapping("/brand_detail")
+	public ModelAndView brand_detail(@PathVariable Long brandid) {
+		ModelAndView mv = new ModelAndView("brand_detail");
+
+		//获取品牌详情
+		BrandDetail abrand = branddetailService.getByBrandId(brandid);
+		if(null == abrand)
+			return new ModelAndView("error/404");
+
+		//获取品牌详情图片
+		if(null != abrand && StringUtils.isNotEmpty(abrand.getBrandPic1())){
+			abrand.setBrandPic1(QiniuStorage.getUrl(abrand.getBrandPic1()));
+		}
+		if(null != abrand && StringUtils.isNotEmpty(abrand.getBrandPic2())){
+			abrand.setBrandPic2(QiniuStorage.getUrl(abrand.getBrandPic2()));
+		}
+		mv.addObject("branddetail", abrand);
+
+		return mv;
+	}
+
+
+	/**
+	 * 下单页面
+	 *
+	 * @return
+	 */
+	@RequestMapping("/buy")
+	public ModelAndView buy(@PathVariable Long orderid) {
+		ModelAndView mv = new ModelAndView("buy");
+
+		//获取订单
+		Order order = orderService.getByOrderId(orderid);
+		if(null == order)
+			return new ModelAndView("error/404");
+
+		mv.addObject("order",order);
+		return mv;
+	}
+}
