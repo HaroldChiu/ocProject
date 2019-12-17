@@ -1,6 +1,6 @@
 package com.online.college.core.order.service.impl;
 
-import com.online.college.core.brand.dao.BrandDao;
+//import com.online.college.core.brand.dao.BrandDao;
 import com.online.college.core.order.dao.OrderDao;
 import com.online.college.core.order.domain.Order;
 import com.online.college.core.order.service.IOrderService;
