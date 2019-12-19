@@ -27,13 +27,13 @@
     <select id="getByOrderId" parameterType="java.lang.String"  resultMap="BeanResultMap" >
         SELECT
         <include refid="All_Columns"  />
-        FROM t_brand
-        WHERE brandId = #{orderId, jdbcType=INTEGER}
+        FROM t_order
+        WHERE orderid = #{orderId, jdbcType=INTEGER}
         AND DEL = 0
     </select>
 
     <insert id="createSelectivity" parameterType="com.online.college.core.order.domain.Order" flushCache="true"  useGeneratedKeys="true" keyProperty="id"  >
-        INSERT INTO t_auth_user
+        INSERT INTO t_order
         <trim prefix="(" suffix=")"  suffixOverrides="," >
             <if test="orderId != null ">
                 orderid,
