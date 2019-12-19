@@ -257,7 +257,7 @@ a:focus{outline:none;}
 .main-category-menu .category .group{
 	height: 75px;
     line-height:75px;
-	font-size: 16px;
+	font-size: 19px;
 	color: #FFF;
 	width: 190px;
     margin-left: 25px;
@@ -449,6 +449,10 @@ a:focus{outline:none;}
 
 .gray-bg {
     background-color: #CCC;
+}
+
+.gold-bg {
+	background-color: #FFA500;
 }
 
 .types-content-left {
