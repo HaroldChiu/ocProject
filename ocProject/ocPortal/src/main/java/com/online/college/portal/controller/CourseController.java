@@ -224,12 +224,12 @@ public class CourseController {
 	 *
 	 * @return
 	 */
-	@RequestMapping("/buy/{orderId}")
-	public ModelAndView buy(@PathVariable Long orderId) {
+	@RequestMapping("/buy/{courseId}")
+	public ModelAndView buy(@PathVariable Long courseId) {
 		ModelAndView mv = new ModelAndView("buy");
-		//获取订单详情
-		Order order = this.orderService.getByOrderId(orderId);
-		mv.addObject("order", order);
+		//获取课程实体
+		Course course = courseService.getById(courseId);
+		mv.addObject("course", course);
 		return mv;
 	}
 }
