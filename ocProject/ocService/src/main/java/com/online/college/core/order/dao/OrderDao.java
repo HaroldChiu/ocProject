@@ -9,5 +9,10 @@ public interface OrderDao {
      **/
     public Order getByOrderId(Long orderid);
 
+    /**
+     *创建新记录
+     **/
+    public void createSelectivity(Order entity);
+
 
 }

@@ -19,6 +19,26 @@
         update_time,update_user,del,id
     </sql>
 
+    <select id="querylist"  parameterType="com.online.college.core.brand.domain.BrandQueryDto"  resultMap="BeanResultMap">
+        SELECT
+        <include refid="All_Columns" />
+        FROM t_course
+        <trim prefix="WHERE " prefixOverrides="AND |OR ">
+            <if test="brandName != null">
+                AND type = #{type, jdbcType=VARCHAR}
+            </if>
+            <if test="brandPicture != null">
+                AND classify = #{classify, jdbcType=VARCHAR}
+            </if>
+        </trim>
+        <if test="sortField != null">
+            ORDER BY ${sortField}  ${sortDirection}
+        </if>
+        <if test="start != null and end != null">
+            LIMIT #{start, jdbcType=INTEGER} , #{end, jdbcType=INTEGER}
+        </if>
+    </select>
+
     <select id="getByBrandId" parameterType="java.lang.String"  resultMap="BeanResultMap" >
         SELECT
         <include refid="All_Columns"  />

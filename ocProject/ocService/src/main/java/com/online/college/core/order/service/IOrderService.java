@@ -8,4 +8,9 @@ public interface IOrderService {
      *根据orderid获取
      **/
     public Order getByOrderId(Long orderid);
+
+    /**
+     *创建
+     **/
+    public void createSelectivity(Order entity);
 }

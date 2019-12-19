@@ -11,6 +11,11 @@ import org.springframework.stereotype.Service;
 public class OrderServiceImpl implements IOrderService {
     @Autowired
     private OrderDao entityDao;
+
+    public void createSelectivity(Order entity){
+        entityDao.createSelectivity(entity);
+    }
+
     /**
      *根据orderid获取
      **/
