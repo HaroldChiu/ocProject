@@ -190,8 +190,8 @@ public class CourseController {
 		ModelAndView mv = new ModelAndView("brand");
 		//获取品牌
 		BrandQueryDto queryEntity = new BrandQueryDto();
-//		queryEntity.descSortField("weight");
-//		queryEntity.setCount(5);//5个品牌
+		queryEntity.descSortField("weight");
+		queryEntity.setCount(5);//5个品牌
 //		queryEntity.setSubClassify(course.getSubClassify());
 		List<Brand> BrandList = this.brandService.queryList(queryEntity);
 		mv.addObject("BrandList", BrandList);
