@@ -2,7 +2,9 @@
 SQLyog Ultimate v12.08 (64 bit)
 MySQL - 5.6.46 : Database - ocdb
 *********************************************************************
-*/
+2019.12.19，新增三张表，t_brand,t_branddetail,t_order
+*/
+
 
 /*!40101 SET NAMES utf8 */;
 
