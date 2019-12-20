@@ -4,29 +4,22 @@
 <mapper namespace="com.online.college.core.branddetail.dao.BrandDetailDao">
 
     <resultMap id="BeanResultMap" type="com.online.college.core.branddetail.domain.BrandDetail" >
-        <id column="id" property="id" jdbcType="INTEGER"/>
-        <result column="brandid" property="brandId"  jdbcType="INTEGER" />
-        <result column="brandheadline" property="brandHeadline"  jdbcType="VARCHAR" />
-        <result column="brandintro" property="brandIntro"  jdbcType="VARCHAR" />
-        <result column="brandpic1" property="brandPic1"  jdbcType="VARCHAR" />
-        <result column="brandpic2" property="brandPic2"  jdbcType="VARCHAR" />
-        <result column="create_time" property="createTime"  jdbcType="DATE" />
-        <result column="create_user" property="createUser"  jdbcType="VARCHAR" />
-        <result column="update_time" property="updateTime"  jdbcType="TIMESTAMP" />
-        <result column="update_user" property="updateUser"  jdbcType="VARCHAR" />
-        <result column="del" property="del"  jdbcType="TINYINT" />
+        <id column="brand_id" property="brandId" jdbcType="INTEGER"/>
+        <result column="brand_headline" property="brandHeadline"  jdbcType="VARCHAR" />
+        <result column="brand_intro" property="brandIntro"  jdbcType="VARCHAR" />
+        <result column="brand_pic1" property="brandPic1"  jdbcType="VARCHAR" />
+        <result column="brand_pic2" property="brandPic2"  jdbcType="VARCHAR" />
     </resultMap>
 
     <sql id="All_Columns">
-        brandid,brandheadline,brandintro,brandpic1,brandpic2,create_time,create_user,
-        update_time,update_user,del,id
+        brand_id,brand_headline,brand_intro,brand_pic1,brand_pic2
     </sql>
 
     <select id="getByBrandId" parameterType="java.lang.String"  resultMap="BeanResultMap" >
         SELECT
         <include refid="All_Columns"  />
         FROM t_brand_detail
-        WHERE brandid = #{brandId, jdbcType=INTEGER}
+        WHERE brand_id = #{brandId, jdbcType=INTEGER}
         AND DEL = 0
     </select>
 
