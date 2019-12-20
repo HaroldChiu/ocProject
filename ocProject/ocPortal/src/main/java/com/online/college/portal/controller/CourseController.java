@@ -189,12 +189,12 @@ public class CourseController {
 
 		ModelAndView mv = new ModelAndView("brand");
 		//获取品牌
-		BrandQueryDto queryEntity = new BrandQueryDto();
-		queryEntity.descSortField("weight");
-		queryEntity.setCount(5);//5个品牌
-//		queryEntity.setSubClassify(course.getSubClassify());
-		List<Brand> BrandList = this.brandService.queryList(queryEntity);
-		mv.addObject("BrandList", BrandList);
+//		BrandQueryDto queryEntity = new BrandQueryDto();
+////		queryEntity.descSortField("weight");
+////		queryEntity.setCount(5);//5个品牌
+////		queryEntity.setSubClassify(course.getSubClassify());
+//		List<Brand> BrandList = this.brandService.queryList(queryEntity);
+//		mv.addObject("BrandList", BrandList);
 		return mv;
 	}
 
@@ -227,6 +227,9 @@ public class CourseController {
 	@RequestMapping("/buy/{courseId}")
 	public ModelAndView buy(@PathVariable Long courseId) {
 		ModelAndView mv = new ModelAndView("buy");
+//		//获取品牌
+//		Order order = orderService.getByOrderId(orderid);
+//		mv.addObject("orderid",orderid);
 		//获取课程实体
 		Course course = courseService.getById(courseId);
 		mv.addObject("course", course);

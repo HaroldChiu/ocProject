@@ -4,31 +4,25 @@
 <mapper namespace="com.online.college.core.order.dao.OrderDao">
 
     <resultMap id="BeanResultMap" type="com.online.college.core.order.domain.Order" >
-        <id column="id" property="id" jdbcType="INTEGER"/>
-        <result column="orderid" property="orderId"  jdbcType="INTEGER" />
-        <result column="userid" property="userId"  jdbcType="INTEGER" />
-        <result column="productid" property="productId"  jdbcType="INTEGER" />
-        <result column="buynum" property="buyNum"  jdbcType="INTEGER" />
-        <result column="totalprice" property="totalPrice"  jdbcType="INTEGER" />
-        <result column="addressid" property="addressId"  jdbcType="INTEGER" />
-        <result column="paytime" property="payTime"  jdbcType="DATE" />
+        <id column="order_id" property="orderId" jdbcType="INTEGER"/>
+        <result column="user_id" property="userId"  jdbcType="INTEGER" />
+        <result column="product_id" property="productId"  jdbcType="INTEGER" />
+        <result column="buy_num" property="buyNum"  jdbcType="INTEGER" />
+        <result column="total_price" property="totalPrice"  jdbcType="INTEGER" />
+        <result column="address_id" property="addressId"  jdbcType="INTEGER" />
+        <result column="pay_time" property="payTime"  jdbcType="DATE" />
         <result column="create_time" property="createTime"  jdbcType="DATE" />
-        <result column="create_user" property="createUser"  jdbcType="VARCHAR" />
-        <result column="update_time" property="updateTime"  jdbcType="TIMESTAMP" />
-        <result column="update_user" property="updateUser"  jdbcType="VARCHAR" />
-        <result column="del" property="del"  jdbcType="TINYINT" />
     </resultMap>
 
     <sql id="All_Columns">
-        orderid,userid,productid,buynum,totalprice,addressid,paytime,create_time,create_user,
-        update_time,update_user,del,id
+        order_id,user_id,product_id,buy_num,total_price,address_id,pay_time,create_time
     </sql>
 
     <select id="getByOrderId" parameterType="java.lang.String"  resultMap="BeanResultMap" >
         SELECT
         <include refid="All_Columns"  />
         FROM t_order
-        WHERE orderid = #{orderId, jdbcType=INTEGER}
+        WHERE order_id = #{orderId, jdbcType=INTEGER}
         AND DEL = 0
     </select>
 
@@ -36,40 +30,28 @@
         INSERT INTO t_order
         <trim prefix="(" suffix=")"  suffixOverrides="," >
             <if test="orderId != null ">
-                orderid,
+                order_id,
             </if>
             <if test="userId != null ">
-                userid,
+                user_id,
             </if>
             <if test="productId != null ">
-                productid,
+                product_id,
             </if>
             <if test="buyNum != null ">
-                buynum,
+                buy_num,
             </if>
             <if test="totalPrice != null ">
-                totalprice,
+                total_price,
             </if>
             <if test="addressId != null ">
-                addressid,
+                address_id,
             </if>
             <if test="payTime != null ">
-                paytime,
+                pay_time,
             </if>
             <if test="createTime != null ">
                 create_time,
-            </if>
-            <if test="createUser != null ">
-                create_user,
-            </if>
-            <if test="updateTime != null ">
-                update_time,
-            </if>
-            <if test="updateUser != null ">
-                update_user,
-            </if>
-            <if test="del != null ">
-                del,
             </if>
         </trim>
         VALUES
@@ -97,18 +79,6 @@
             </if>
             <if test="createTime != null ">
                 #{createTime, jdbcType=DATE},
-            </if>
-            <if test="createUser != null ">
-                #{createUser, jdbcType=VARCHAR},
-            </if>
-            <if test="updateTime != null ">
-                #{updateTime, jdbcType=TIMESTAMP},
-            </if>
-            <if test="updateUser != null ">
-                #{updateUser, jdbcType=VARCHAR},
-            </if>
-            <if test="del != null ">
-                #{del, jdbcType=TINYINT},
             </if>
         </trim>
     </insert>
