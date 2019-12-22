@@ -77,6 +77,15 @@ public class CourseServiceImpl implements ICourseService{
 	public void deleteLogic(Course entity){
 		entityDao.deleteLogic(entity);
 	}
+	
+	//模糊搜索
+	@Override
+	public List<Course> queryListByMohu(String mohu) {
+		HashMap<String,Object> map = new HashMap<String,Object>();
+		map.put("mohu.a",mohu);
+		List<Course> queryListByMohu = entityDao.queryListByMohu(map);
+		return queryListByMohu;
+	}
 
 }
 
