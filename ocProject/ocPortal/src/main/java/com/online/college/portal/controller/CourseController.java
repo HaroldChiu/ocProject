@@ -211,12 +211,6 @@ public class CourseController {
         ModelAndView mv = new ModelAndView("brand_detail");
         //获取品牌详情
         BrandDetail brandDetail = this.branddetailService.getByBrandId(brandId);
-        if (null != brandDetail && StringUtils.isNotEmpty(brandDetail.getBrandPic1())) {
-            brandDetail.setBrandPic1(QiniuStorage.getUrl(brandDetail.getBrandPic1()));
-        }
-        if (null != brandDetail && StringUtils.isNotEmpty(brandDetail.getBrandPic2())) {
-            brandDetail.setBrandPic2(QiniuStorage.getUrl(brandDetail.getBrandPic2()));
-        }
         mv.addObject("detail", brandDetail);
         return mv;
     }
