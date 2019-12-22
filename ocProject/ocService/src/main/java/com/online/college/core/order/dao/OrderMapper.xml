@@ -8,7 +8,7 @@
         <result column="user_id" property="userId"  jdbcType="INTEGER" />
         <result column="product_id" property="productId"  jdbcType="INTEGER" />
         <result column="buy_num" property="buyNum"  jdbcType="INTEGER" />
-        <result column="total_price" property="totalPrice"  jdbcType="INTEGER" />
+        <result column="total_price" property="totalPrice"  jdbcType="DECIMAL" />
         <result column="address_id" property="addressId"  jdbcType="INTEGER" />
         <result column="pay_time" property="payTime"  jdbcType="DATE" />
         <result column="create_time" property="createTime"  jdbcType="DATE" />
@@ -23,10 +23,15 @@
         <include refid="All_Columns"  />
         FROM t_order
         WHERE order_id = #{orderId, jdbcType=INTEGER}
-        AND DEL = 0
     </select>
 
-    <insert id="createSelectivity" parameterType="com.online.college.core.order.domain.Order" flushCache="true"  useGeneratedKeys="true" keyProperty="id"  >
+    <insert id="createOrderByProductPrice" parameterType="com.online.college.core.order.domain.Order" flushCache="true"  useGeneratedKeys="true" keyProperty="id"  >
+    INSERT INTO t_order
+    (order_id,user_id,product_id,buy_num,total_price,address_id,pay_time,create_time)
+    values(#{order_id},1,1,1,#{total_price},1,2019-12-22 22:20:12,2019-12-22 22:20:12)
+    </insert>
+
+    <insert id="createSelectivity" parameterType="com.online.college.core.order.domain.Order" flushCache="true"  useGeneratedKeys="true" keyProperty="orderId"  >
         INSERT INTO t_order
         <trim prefix="(" suffix=")"  suffixOverrides="," >
             <if test="orderId != null ">
@@ -82,6 +87,8 @@
             </if>
         </trim>
     </insert>
+
+
 
 
 </mapper>

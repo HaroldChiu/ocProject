@@ -21,8 +21,10 @@
 		<!-- 静态文件 -->
 		<mvc:resources mapping="/res/**"  location="/res/"  cache-period="3600"/>
 		<mvc:resources mapping="/static/**"  location="/static/"  cache-period="3600"/>
+	    <mvc:default-servlet-handler/>
+	    <context:component-scan base-package="com.online.college.portal.controller.*"/>
 		<!-- <mvc:resources mapping="/images/**"  location="/WEB-INF/images/"  cache-period="3600"/> -->
-		
+
 		<bean id="freemarkerConfig" class="com.online.college.common.web.shiro.ShiroFreeMarkerConfigurer">  
 		    <property name="templateLoaderPath" value=""/>
 			<property name="freemarkerSettings">
@@ -52,5 +54,5 @@
 	     
 	    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" >
 	    	<property name="maxUploadSize" value="10000000" />
-	    </bean>  
+	    </bean>
 </beans>

@@ -7,6 +7,8 @@ import com.online.college.core.order.service.IOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+
 @Service
 public class OrderServiceImpl implements IOrderService {
     @Autowired
@@ -14,6 +16,13 @@ public class OrderServiceImpl implements IOrderService {
 
     public void createSelectivity(Order entity){
         entityDao.createSelectivity(entity);
+    }
+
+    /**
+     *通过productprice创建
+     **/
+    public Order createOrderByProductPrice(BigDecimal productprice) {
+        return entityDao.createOrderByProductPrice(productprice);
     }
 
     /**
