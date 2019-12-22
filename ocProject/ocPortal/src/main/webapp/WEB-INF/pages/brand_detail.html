@@ -31,12 +31,18 @@
 <body>
 <#include "./common/header.html">
 <div class="detail">
-    <p class="title">这是一个标题</p>
-    <p class="intro">这是这个品牌的介绍这是这个品牌的介绍这是这个品牌的介绍这是这个品牌的介绍这是这个品牌的介绍这是这个品牌的介绍</p>
+    <#if detail??>
+    <p class="title">${detail.brandHeadline}</p>
+    <p class="intro">${detail.brandIntro}</p>
     <p class="imgs">
-        <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3827453389,2757950628&fm=26&gp=0.jpg">
-        <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3827453389,2757950628&fm=26&gp=0.jpg">
+        <#if detail.brandPic1??>
+        <img src="${detail.brandPic1}">
+        </#if>
+        <#if detail.brandPic2??>
+        <img src="${detail.brandPic2}">
+        </#if>
     </p>
+    </#if>
 </div>
 </body>
 </html>

@@ -15,7 +15,7 @@
         brand_id,brand_headline,brand_intro,brand_pic1,brand_pic2
     </sql>
 
-    <select id="getByBrandId" parameterType="java.lang.String"  resultMap="BeanResultMap" >
+    <select id="getByBrandId" parameterType="java.lang.Long"  resultMap="BeanResultMap" >
         SELECT
         <include refid="All_Columns"  />
         FROM t_brand_detail
