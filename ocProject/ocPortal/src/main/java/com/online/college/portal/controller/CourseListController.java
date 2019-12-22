@@ -103,4 +103,12 @@ public class CourseListController {
 		mv.addObject("page", page);
 		return mv;
 	}
+	//模糊搜索
+	@RequestMapping("/mohu/{keyWord}")
+	public ModelAndView comment(@PathVariable String keyWord){
+		ModelAndView mv = new ModelAndView("mohu");
+		 List<Course> list = this.courseService.queryListByMohu(keyWord);
+		 mv.addObject("page", list);
+		return mv;
+	}
 }
