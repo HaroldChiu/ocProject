@@ -20,7 +20,6 @@
         <include refid="All_Columns"  />
         FROM t_brand_detail
         WHERE brand_id = #{brandId, jdbcType=INTEGER}
-        AND DEL = 0
     </select>
 
 </mapper>

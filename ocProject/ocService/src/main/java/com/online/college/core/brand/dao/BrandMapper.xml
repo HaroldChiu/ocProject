@@ -13,7 +13,7 @@
         brand_id,brand_name,brand_picture
     </sql>
 
-    <select id="querylist"  parameterType="com.online.college.core.brand.domain.BrandQueryDto"  resultMap="BeanResultMap">
+    <select id="queryList"  parameterType="com.online.college.core.brand.domain.BrandQueryDto"  resultMap="BeanResultMap">
         SELECT
         <include refid="All_Columns" />
         FROM t_brand
@@ -38,7 +38,6 @@
         <include refid="All_Columns"  />
         FROM t_brand
         WHERE brand_id = #{brandId, jdbcType=INTEGER}
-        AND DEL = 0
     </select>
 
     <select id="getByBrandName" parameterType="java.lang.String"  resultMap="BeanResultMap" >
@@ -46,10 +45,9 @@
         <include refid="All_Columns"  />
         FROM t_brand
         WHERE brand_name = #{brandName, jdbcType=VARCHAR}
-        AND DEL = 0
     </select>
 
-    <insert id="create" parameterType="com.online.college.core.brand.domain.Brand" flushCache="true"  useGeneratedKeys="true" keyProperty="id"  >
+    <insert id="create" parameterType="com.online.college.core.brand.domain.Brand" flushCache="true"  useGeneratedKeys="true" keyProperty="brandId"  >
         INSERT INTO t_brand
         ( brand_name, brand_picture,brand_id )
         VALUES
