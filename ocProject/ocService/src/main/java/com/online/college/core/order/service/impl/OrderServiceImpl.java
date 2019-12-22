@@ -21,7 +21,7 @@ public class OrderServiceImpl implements IOrderService {
     /**
      *通过productprice创建
      **/
-    public Order createOrderByProductPrice(BigDecimal productprice) {
+    public Integer createOrderByProductPrice(BigDecimal productprice) {
         return entityDao.createOrderByProductPrice(productprice);
     }
 

@@ -19,7 +19,7 @@ public interface OrderDao {
     /**
      *通过productid创建
      **/
-    public Order createOrderByProductPrice(BigDecimal productprice);
+    public Integer createOrderByProductPrice(BigDecimal productprice);
 
 
 }

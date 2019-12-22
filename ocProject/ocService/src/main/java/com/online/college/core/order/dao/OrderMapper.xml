@@ -25,10 +25,10 @@
         WHERE order_id = #{orderId, jdbcType=INTEGER}
     </select>
 
-    <insert id="createOrderByProductPrice" parameterType="com.online.college.core.order.domain.Order" flushCache="true"  useGeneratedKeys="true" keyProperty="id"  >
+    <insert id="createOrderByProductPrice" parameterType="com.online.college.core.order.domain.Order" flushCache="true"  useGeneratedKeys="true" keyProperty="orderId"  >
     INSERT INTO t_order
-    (order_id,user_id,product_id,buy_num,total_price,address_id,pay_time,create_time)
-    values(#{order_id},1,1,1,#{total_price},1,2019-12-22 22:20:12,2019-12-22 22:20:12)
+    (user_id,product_id,buy_num,total_price,address_id,pay_time,create_time)
+    values(1,1,1,#{total_price},1,'2019-12-22 22:20:12','2019-12-22 22:20:12')
     </insert>
 
     <insert id="createSelectivity" parameterType="com.online.college.core.order.domain.Order" flushCache="true"  useGeneratedKeys="true" keyProperty="orderId"  >

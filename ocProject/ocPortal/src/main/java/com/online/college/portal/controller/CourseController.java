@@ -235,8 +235,8 @@ public class CourseController {
         //获取课程价格
         BigDecimal orderprice = course.getPrice();
         //创建订单实体
-        Order order = orderService.createOrderByProductPrice(orderprice);
-        mv.addObject("order", order);
+        Integer i = orderService.createOrderByProductPrice(orderprice);
+        mv.addObject("price", orderprice);
 
         return mv;
     }
