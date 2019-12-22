@@ -2,9 +2,7 @@
 SQLyog Ultimate v12.08 (64 bit)
 MySQL - 5.6.46 : Database - ocdb
 *********************************************************************
-增加3张表,t_brand,t_brand_detail,t_order
-*/
-
+*/
 
 /*!40101 SET NAMES utf8 */;
 
@@ -91,7 +89,7 @@ CREATE TABLE `t_brand_detail` (
 
 /*Data for the table `t_brand_detail` */
 
-insert  into `t_brand_detail`(`brand_id`,`brand_headline`,`brand_intro`,`brand_pic1`,`brand_pic2`) values (1,'品牌1','品牌1就是品牌1品牌1就是品牌1品牌1就是品牌1品牌1就是品牌1品牌1就是品牌1','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576498522131&di=f6ea716c471a28240236ca0e63568feb&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F018e265cb927f8a801208f8b2dce2f.jpg%403000w_1l_2o_100sh.jpg','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576498522131&di=f6ea716c471a28240236ca0e63568feb&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F018e265cb927f8a801208f8b2dce2f.jpg%403000w_1l_2o_100sh.jpg');
+insert  into `t_brand_detail`(`brand_id`,`brand_headline`,`brand_intro`,`brand_pic1`,`brand_pic2`) values (1,'品牌1','品牌1就是品牌1品牌1就是品牌1品牌1就是品牌1品牌1就是品牌1品牌1就是品牌1','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576498522131&di=f6ea716c471a28240236ca0e63568feb&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F018e265cb927f8a801208f8b2dce2f.jpg%403000w_1l_2o_100sh.jpg','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576498522131&di=f6ea716c471a28240236ca0e63568feb&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F018e265cb927f8a801208f8b2dce2f.jpg%403000w_1l_2o_100sh.jpg'),(2,'品牌2','品牌2就是品牌2品牌2就是品牌2品牌2就是品牌2品牌2就是品牌2品牌2就是品牌2品牌2就是品牌2','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576993408717&di=5ce055262c6754ceeb00f2d89fe80887&imgtype=0&src=http%3A%2F%2Fwww.chinaadec.com%2FUploadFile%2Fimage%2F20121213%2F20121213115257_535.jpg','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576993408717&di=5ce055262c6754ceeb00f2d89fe80887&imgtype=0&src=http%3A%2F%2Fwww.chinaadec.com%2FUploadFile%2Fimage%2F20121213%2F20121213115257_535.jpg'),(3,'品牌3','品牌3就是品牌3品牌3就是品牌3品牌3就是品牌3品牌3就是品牌3品牌3就是品牌3品牌3就是品牌3','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576993428664&di=a8e4fb90cd8a107bd0a66b93298ae4b1&imgtype=0&src=http%3A%2F%2Fwww.soomal.com%2Fimages%2Fdoc%2F20130729%2F00034078.jpg','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576993428664&di=a8e4fb90cd8a107bd0a66b93298ae4b1&imgtype=0&src=http%3A%2F%2Fwww.soomal.com%2Fimages%2Fdoc%2F20130729%2F00034078.jpg'),(4,'品牌4','品牌4就是品牌4品牌4就是品牌4品牌4就是品牌4品牌4就是品牌4品牌4就是品牌4品牌4就是品牌4','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576993444394&di=a57742609c8d690d0f2d56942a6a880f&imgtype=0&src=http%3A%2F%2Fpic113.nipic.com%2Ffile%2F20161025%2F12860715_095654250032_2.jpg','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576993444394&di=a57742609c8d690d0f2d56942a6a880f&imgtype=0&src=http%3A%2F%2Fpic113.nipic.com%2Ffile%2F20161025%2F12860715_095654250032_2.jpg'),(5,'品牌5','品牌5就是品牌5品牌5就是品牌5品牌5就是品牌5品牌5就是品牌5品牌5就是品牌5品牌5就是品牌5品牌5就是品牌5','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576993464028&di=a360713adf61428b11f422b3ada7ccbe&imgtype=0&src=http%3A%2F%2Fh.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F1c950a7b02087bf49d5ceef0f2d3572c11dfcf73.jpg','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576993464028&di=a360713adf61428b11f422b3ada7ccbe&imgtype=0&src=http%3A%2F%2Fh.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F1c950a7b02087bf49d5ceef0f2d3572c11dfcf73.jpg');
 
 /*Table structure for table `t_consts_classify` */
 
@@ -282,11 +280,11 @@ CREATE TABLE `t_order` (
   `create_time` varchar(255) DEFAULT NULL,
   `pay_time` varchar(255) DEFAULT NULL,
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=310 DEFAULT CHARSET=utf8;
 
 /*Data for the table `t_order` */
 
-insert  into `t_order`(`order_id`,`user_id`,`product_id`,`buy_num`,`total_price`,`address_id`,`create_time`,`pay_time`) values (1,1,1,1,'299',1,'2019-11-16 22:20:12','2019-11-16 22:20:12'),(2,1,2,1,'149',1,'2019-11-16 22:20:12','2019-11-16 22:20:12');
+insert  into `t_order`(`order_id`,`user_id`,`product_id`,`buy_num`,`total_price`,`address_id`,`create_time`,`pay_time`) values (301,1,1,1,'0',1,'2019-12-22 22:20:12','2019-12-22 22:20:12'),(302,1,1,1,'0',1,'2019-12-22 22:20:12','2019-12-22 22:20:12'),(303,1,1,1,'0',1,'2019-12-22 22:20:12','2019-12-22 22:20:12'),(304,1,1,1,'0',1,'2019-12-22 22:20:12','2019-12-22 22:20:12'),(305,1,1,1,'0',1,'2019-12-22 22:20:12','2019-12-22 22:20:12'),(306,1,1,1,'299',1,'2019-12-22 22:20:12','2019-12-22 22:20:12'),(307,1,1,1,'299',1,'2019-12-22 22:20:12','2019-12-22 22:20:12'),(308,1,1,1,'89',1,'2019-12-22 22:20:12','2019-12-22 22:20:12'),(309,1,1,1,'100',1,'2019-12-22 22:20:12','2019-12-22 22:20:12');
 
 /*Table structure for table `t_user_collections` */
 
@@ -327,11 +325,11 @@ CREATE TABLE `t_user_course_section` (
   `update_user` varchar(32) NOT NULL DEFAULT 'system',
   `del` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COMMENT='用户学习章节表';
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COMMENT='用户学习章节表';
 
 /*Data for the table `t_user_course_section` */
 
-insert  into `t_user_course_section`(`id`,`user_id`,`course_id`,`section_id`,`status`,`rate`,`create_time`,`create_user`,`update_time`,`update_user`,`del`) values (1,1,1,7,1,50,'2017-05-03 00:00:00','system','2017-05-06 15:57:39','system',0),(2,1,1,8,1,60,'2017-05-03 00:00:00','system','2017-05-06 15:57:41','system',0),(3,1,1,12,0,0,'2017-05-03 00:00:00','wangyangming','2017-05-06 23:48:21','wangyangming',0),(4,1,1,23,0,0,'2017-05-04 00:00:00','wangyangming','2017-05-04 00:01:50','wangyangming',0),(5,2,1,24,0,0,'2017-05-04 00:00:00','wangyangming','2017-05-06 14:31:16','wangyangming',0),(6,2,1,6,0,0,'2017-05-04 00:00:00','wangyangming','2017-05-06 14:31:17','wangyangming',0),(7,3,1,13,0,0,'2017-05-04 00:00:00','wangyangming','2017-05-06 14:31:18','wangyangming',0),(8,3,1,14,0,0,'2017-05-04 00:00:00','wangyangming','2017-05-06 14:31:18','wangyangming',0),(9,1,1,15,0,0,'2017-05-04 00:00:00','wangyangming','2017-05-04 22:43:44','wangyangming',0),(10,4,1,21,0,0,'2017-05-04 00:00:00','wangyangming','2017-05-06 14:31:21','wangyangming',0),(11,4,1,9,0,0,'2017-05-04 00:00:00','wangyangming','2017-05-06 14:31:22','wangyangming',0),(12,1,1,9,0,0,'2017-05-06 00:00:00','wangyangming','2017-05-06 16:32:24','wangyangming',0),(13,27,1,12,0,0,'2019-11-17 00:00:00','test111','2019-11-17 14:37:40','test111',0);
+insert  into `t_user_course_section`(`id`,`user_id`,`course_id`,`section_id`,`status`,`rate`,`create_time`,`create_user`,`update_time`,`update_user`,`del`) values (1,1,1,7,1,50,'2017-05-03 00:00:00','system','2017-05-06 15:57:39','system',0),(2,1,1,8,1,60,'2017-05-03 00:00:00','system','2017-05-06 15:57:41','system',0),(3,1,1,12,0,0,'2017-05-03 00:00:00','wangyangming','2017-05-06 23:48:21','wangyangming',0),(4,1,1,23,0,0,'2017-05-04 00:00:00','wangyangming','2017-05-04 00:01:50','wangyangming',0),(5,2,1,24,0,0,'2017-05-04 00:00:00','wangyangming','2017-05-06 14:31:16','wangyangming',0),(6,2,1,6,0,0,'2017-05-04 00:00:00','wangyangming','2017-05-06 14:31:17','wangyangming',0),(7,3,1,13,0,0,'2017-05-04 00:00:00','wangyangming','2017-05-06 14:31:18','wangyangming',0),(8,3,1,14,0,0,'2017-05-04 00:00:00','wangyangming','2017-05-06 14:31:18','wangyangming',0),(9,1,1,15,0,0,'2017-05-04 00:00:00','wangyangming','2017-05-04 22:43:44','wangyangming',0),(10,4,1,21,0,0,'2017-05-04 00:00:00','wangyangming','2017-05-06 14:31:21','wangyangming',0),(11,4,1,9,0,0,'2017-05-04 00:00:00','wangyangming','2017-05-06 14:31:22','wangyangming',0),(12,1,1,9,0,0,'2017-05-06 00:00:00','wangyangming','2017-05-06 16:32:24','wangyangming',0),(13,27,1,12,0,0,'2019-11-17 00:00:00','test111','2019-11-17 14:37:40','test111',0),(14,2,1,12,0,0,'2019-12-22 00:00:00','lisi','2019-12-22 12:21:51','lisi',0);
 
 /*Table structure for table `t_user_follows` */
 
