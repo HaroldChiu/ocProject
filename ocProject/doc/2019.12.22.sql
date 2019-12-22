@@ -2,7 +2,7 @@
 SQLyog Ultimate v12.08 (64 bit)
 MySQL - 5.6.46 : Database - ocdb
 *********************************************************************
-新增t_brand,t_brand_detail,t_order表。
+增加3张表,t_brand,t_brand_detail,t_order
 */
 
 
@@ -70,11 +70,11 @@ CREATE TABLE `t_brand` (
   `brand_picture` varchar(255) NOT NULL,
   `weight` int(11) NOT NULL,
   PRIMARY KEY (`brand_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 /*Data for the table `t_brand` */
 
-insert  into `t_brand`(`brand_id`,`brand_name`,`brand_picture`,`weight`) values (1,'品牌1','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576498522131&di=f6ea716c471a28240236ca0e63568feb&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F018e265cb927f8a801208f8b2dce2f.jpg%403000w_1l_2o_100sh.jpg',0);
+insert  into `t_brand`(`brand_id`,`brand_name`,`brand_picture`,`weight`) values (1,'品牌1','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576498522131&di=f6ea716c471a28240236ca0e63568feb&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F018e265cb927f8a801208f8b2dce2f.jpg%403000w_1l_2o_100sh.jpg',0),(2,'品牌2','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576993408717&di=5ce055262c6754ceeb00f2d89fe80887&imgtype=0&src=http%3A%2F%2Fwww.chinaadec.com%2FUploadFile%2Fimage%2F20121213%2F20121213115257_535.jpg',0),(3,'品牌3','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576993428664&di=a8e4fb90cd8a107bd0a66b93298ae4b1&imgtype=0&src=http%3A%2F%2Fwww.soomal.com%2Fimages%2Fdoc%2F20130729%2F00034078.jpg',0),(4,'品牌4','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576993444394&di=a57742609c8d690d0f2d56942a6a880f&imgtype=0&src=http%3A%2F%2Fpic113.nipic.com%2Ffile%2F20161025%2F12860715_095654250032_2.jpg',0),(5,'品牌5','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576993464028&di=a360713adf61428b11f422b3ada7ccbe&imgtype=0&src=http%3A%2F%2Fh.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F1c950a7b02087bf49d5ceef0f2d3572c11dfcf73.jpg',0);
 
 /*Table structure for table `t_brand_detail` */
 
