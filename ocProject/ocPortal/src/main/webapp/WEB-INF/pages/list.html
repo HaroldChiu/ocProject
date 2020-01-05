@@ -56,6 +56,17 @@
 					<a href="javascript:void(0)" style="display: inline-block;" onclick="_queryPage(1,undefined,'pop')">
 					<span <#if sort?? && sort=='pop'>class="color-oc"</#if> >最热</span>
 					</a>
+					//模糊搜索
+					<a href="javascript:void(0)" style="display: inline-block;margin-right:20px;">
+						<body>
+						<!--input type="text" 表示是一个输入框-->
+						<!--input type="submit" 表示一个提交按钮 相当于一个开关告诉form要发送数据-->
+						                        <div style="display:flex;align-items: center;">
+                            <input style="padding-left:10px" id="input" type="text" placeholder="科普研学" name="wd"/>
+                            <div id="submit" style="margin-left:10px;margin-left: 10px;background: #005fff;color: #fff;font-size: 12px;padding: 4px 20px;border-radius: 4px;">科普一下</div>
+                        </div>
+				</body>
+				</a>
 				</h3>
 				<div class="types-content clearfix" style="margin-bottom: 20px;">
 					<#if (page.items)??>
@@ -71,9 +82,9 @@
 							<#elseif n %3 == 0>
 							<div class="course-card-top purple-bg">
 							<#elseif n %2 == 0>
-							<div class="course-card-top gray-bg">
+							<div class="course-card-top gold-bg">
 							<#else>
-							<div class="course-card-top brown-bg">
+							<div class="course-card-top blue-bg">
 							</#if>
 								<span>${item.subClassifyName!}</span>
 							</div>

@@ -4,6 +4,7 @@
 		<nav class="header-nav">
 			<a href="${s.base}/index.html" class="header-nav-item">首 页</a>
 			<a href="${s.base}/course/list.html" class="header-nav-item">所有内容</a>
+			<a href="${s.base}/course/brand.html" class="header-nav-item">品牌宣传</a>
 			<a href="${s.base}/user/home.html" class="header-nav-item">个人门户</a>
 			<!--<a href="http://opt.ioswift.org" target="_blank" class="header-nav-item" style="width:100px;">运营CMS</a>-->
 <!--			<a href="http://localhost:38080/ocWechat_war_exploded/auth/login.html" target="_blank" class="header-nav-item" style="width:100px;">研学记录</a>-->
@@ -99,6 +100,21 @@
                        <div class="form-group help">
                            <input id="passwordHeader2"  name="password"  type="password" class="form-control"  placeholder="密　码">
                        </div>
+		       <div class="form-group help">
+		       	   <input id="realnameHeader2"  name="realname"  type="realname" class="form-control"  placeholder="真实名">
+		       </div>
+		       <div class="form-group help">
+		       	   <input id="genderHeader2"  name="gender"  type="gender" class="form-control"  placeholder="性别">
+		       </div>
+		       <div class="form-group help">
+		           <input id="open_idHeader2"  name="open_id"  type="open_id" class="form-control"  placeholder="身份证号">
+		       </div>
+		       <div class="form-group help">
+	                   <input id="mobileHeader2"  name="mobile"  type="mobile" class="form-control"  placeholder="手机号">
+		       </div>
+                       <div class="form-group help">
+			   <input id="qqHeader2"  name="qq"  type="qq" class="form-control"  placeholder="QQ">
+		       </div> 
                        <div class="form-group">
 							<input id="identiryCodeHeader2" class="form-control"  name="identiryCode" maxlength="6" class="input-text" type="text" style="width: 120px;float:left;" placeholder="请输入验证码"/>
 							<img  onclick="reloadIndityImg('indeityImgHead2');" id="indeityImgHead2"  src="${s.base}/tools/identiry/code.html" style="width:80px;height:33px;float:left;margin-left:10px;float:left;border-radius:5px;"/>

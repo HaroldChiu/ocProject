@@ -397,5 +397,35 @@
 		SET del = 1
 		WHERE id = #{id, jdbcType=INTEGER}
 	</update>
-
+	
+	<!-- 模糊查询 -->
+<select id="queryListByMohu"  parameterType="Map"  resultMap="BeanResultMap">
+		SELECT 
+		<include refid="All_Columns" />
+		FROM t_course 
+		<trim prefix="WHERE " prefixOverrides="AND |OR "> 
+			<if test="mohu.a != null">
+				OR type like concat('%',#{a},'%')
+			</if>
+			<if test="mohu.a != null">
+				OR classify like concat('%',#{a},'%')
+			</if>
+			<if test="mohu.a != null">
+				OR sub_classify like concat('%',#{a},'%')
+			</if>
+			<if test="mohu.a != null">
+				OR direction like concat('%',#{a},'%')
+			</if>
+			<if test="mohu.a != null">
+				OR username like concat('%',#{a},'%')
+			</if>
+			<if test="mohu.a != null">
+				OR free like concat('%',#{a},'%')
+			</if>
+			<if test="mohu.a != null">
+				OR onsale like concat('%',#{a},'%')
+			</if>
+		</trim>
+	</select>
+	
 </mapper>

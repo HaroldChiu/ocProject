@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>品牌宣传</title>
+    <#include "./common/res.html">
+</head>
+<style>
+    .lists {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 50px 372px;
+    }
+
+    .lists .list {
+        width: 170px;
+        margin-left: 20px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .lists .list img {
+        width: 170px;
+        height: 170px;
+        display: block;
+    }
+
+    .lists .list .name {
+        font-size: 16px;
+        color: #404040;
+        margin: 10px 0;
+    }
+</style>
+<body>
+<#include "./common/header.html">
+<div class="lists">
+    <#list list as item>
+    <a class="list" href="${s.base}/course/brand_detail/${item.brandId}.html">
+        <img src="${item.brandPicture!}">
+        <p class="name">${item.brandName!}</p>
+    </a>
+    </#list>
+</div>
+</body>
+</html>

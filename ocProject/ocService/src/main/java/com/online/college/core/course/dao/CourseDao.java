@@ -55,7 +55,12 @@ public interface CourseDao {
 	*逻辑删除
 	**/
 	public void deleteLogic(Course entity);
-
+	
+	/**
+	 * 模糊查詢
+	 *
+	 */
+	public List<Course> queryListByMohu(@Param("mohu") Map<String, Object> mohu);
 
 
 }

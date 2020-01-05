@@ -101,7 +101,20 @@ public class UserController {
 		mv.addObject("page", page);
 		return mv;
 	}
-	
+	/**
+	 * 我的订单
+	 */
+	@RequestMapping("/order")
+	public ModelAndView order(TailPage<UserCollections> page){
+		ModelAndView mv = new ModelAndView("user/order");
+		mv.addObject("curNav","order");
+		UserCollections queryEntity = new UserCollections();
+		queryEntity.setUserId(SessionContext.getUserId());
+		page = userCollectionsService.queryPage(queryEntity, page);
+
+		mv.addObject("page", page);
+		return mv;
+	}
 	/**
 	 * 信息
 	 */

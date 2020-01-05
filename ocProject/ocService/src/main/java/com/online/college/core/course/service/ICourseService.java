@@ -46,5 +46,10 @@ public interface ICourseService {
 	**/
 	public void deleteLogic(Course entity);
 	
+	/**
+	 * 模糊查询
+	 */
+	public List<Course> queryListByMohu(String mohu);
+	
 }
 

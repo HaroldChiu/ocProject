@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://10.20.91.130/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.online.college.core.order.dao.OrderDao">
+
+    <resultMap id="BeanResultMap" type="com.online.college.core.order.domain.Order" >
+        <id column="order_id" property="orderId" jdbcType="INTEGER"/>
+        <result column="user_id" property="userId"  jdbcType="INTEGER" />
+        <result column="product_id" property="productId"  jdbcType="INTEGER" />
+        <result column="buy_num" property="buyNum"  jdbcType="INTEGER" />
+        <result column="total_price" property="totalPrice"  jdbcType="DECIMAL" />
+        <result column="address_id" property="addressId"  jdbcType="INTEGER" />
+        <result column="pay_time" property="payTime"  jdbcType="DATE" />
+        <result column="create_time" property="createTime"  jdbcType="DATE" />
+    </resultMap>
+
+    <sql id="All_Columns">
+        order_id,user_id,product_id,buy_num,total_price,address_id,pay_time,create_time
+    </sql>
+
+    <select id="getByOrderId" parameterType="java.lang.String"  resultMap="BeanResultMap" >
+        SELECT
+        <include refid="All_Columns"  />
+        FROM t_order
+        WHERE order_id = #{orderId, jdbcType=INTEGER}
+    </select>
+
+    <insert id="createOrderByProductPrice" parameterType="com.online.college.core.order.domain.Order" flushCache="true"  useGeneratedKeys="true" keyProperty="orderId"  >
+    INSERT INTO t_order
+    (user_id,product_id,buy_num,total_price,address_id,pay_time,create_time)
+    values(1,1,1,#{total_price},1,'2019-12-22 22:20:12','2019-12-22 22:20:12')
+    </insert>
+
+    <insert id="createSelectivity" parameterType="com.online.college.core.order.domain.Order" flushCache="true"  useGeneratedKeys="true" keyProperty="orderId"  >
+        INSERT INTO t_order
+        <trim prefix="(" suffix=")"  suffixOverrides="," >
+            <if test="orderId != null ">
+                order_id,
+            </if>
+            <if test="userId != null ">
+                user_id,
+            </if>
+            <if test="productId != null ">
+                product_id,
+            </if>
+            <if test="buyNum != null ">
+                buy_num,
+            </if>
+            <if test="totalPrice != null ">
+                total_price,
+            </if>
+            <if test="addressId != null ">
+                address_id,
+            </if>
+            <if test="payTime != null ">
+                pay_time,
+            </if>
+            <if test="createTime != null ">
+                create_time,
+            </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")"  suffixOverrides="," >
+            <if test="orderId != null ">
+                #{orderId, jdbcType=INTEGER},
+            </if>
+            <if test="userId != null ">
+                #{userId, jdbcType=INTEGER},
+            </if>
+            <if test="productId != null ">
+                #{productId, jdbcType=INTEGER},
+            </if>
+            <if test="buyNum != null ">
+                #{buyNum, jdbcType=INTEGER},
+            </if>
+            <if test="totalPrice != null ">
+                #{totalPrice, jdbcType=INTEGER},
+            </if>
+            <if test="addressId != null ">
+                #{addressId, jdbcType=INTEGER},
+            </if>
+            <if test="payTime != null ">
+                #{payTime, jdbcType=DATE},
+            </if>
+            <if test="createTime != null ">
+                #{createTime, jdbcType=DATE},
+            </if>
+        </trim>
+    </insert>
+
+
+
+
+</mapper>
